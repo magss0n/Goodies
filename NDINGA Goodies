@@ -1,0 +1,193 @@
+GOODIES PROJECT
+PROJECT NAME: Goodies Online Shopping System
+
+
+---
+
+1. Project Structure (Confirmed Layout)
+
+online-shopping-system/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/example/goodies/
+│   │   │       ├── controller/         # Web controllers
+│   │   │       ├── service/            # Business logic
+│   │   │       ├── repository/         # JPA Repositories
+│   │   │       ├── model/              # Entities: Product, User, Order, etc.
+│   │   │       └── config/             # Spring Security + Configs
+│   │   └── resources/
+│   │       ├── templates/              # Thymeleaf templates
+│   │       ├── static/                 # CSS, JS, Images
+│   │       └── application.properties  # DB + security configs
+│
+├── pom.xml                             # Maven config
+└── README.md                           # Documentation & Setup Instructions
+
+
+---
+
+2. Core Functionalities (Must-Have)
+
+User Features
+
+Register / Login / Logout (Spring Security)
+
+Browse product catalog (by category, filters)
+
+Product details page
+
+Search & filter products
+
+Shopping cart (add/remove items)
+
+Checkout process (simulated payment)
+
+Order history tracking
+
+
+Admin Features
+
+Product management (CRUD)
+
+Order management (view/update status)
+
+Inventory tracking (with stock alerts)
+
+User management
+
+
+Optional Advanced Features
+
+Promo codes and discounts
+
+Customer reviews & ratings
+
+FAQ / Support form / Contact page
+
+
+
+---
+
+3. Technologies Stack
+
+Layer	Technology
+
+Backend	Java 17+, Spring Boot, Spring MVC, Spring Security
+Database	MySQL (prod), H2 (dev/test)
+ORM	Hibernate / Spring Data JPA
+Frontend	Thymeleaf, HTML5, CSS3, Bootstrap, JS (vanilla)
+Dev Tools	Spring DevTools, Postman
+Build Tool	Maven
+Version Control	Git / GitHub
+
+
+
+---
+
+4. Key Entities (Model Layer)
+
+User
+
+Product
+
+Category
+
+Cart
+
+Order
+
+OrderItem
+
+Review
+
+Admin
+
+Promotion
+
+
+
+---
+
+5. Deliverables Checklist
+
+[ ] Technical Documentation
+
+Architecture diagram (Spring layered architecture)
+
+Class/UML diagrams
+
+Sequence diagrams for checkout flow, login, etc.
+
+API endpoints documentation
+
+
+[ ] MySQL Database Schema
+
+All entity tables with foreign keys and constraints
+
+
+[ ] SQL Scripts
+
+Table creation
+
+Sample data insertion
+
+
+[ ] Complete Java Source Code
+
+All features implemented with proper MVC structure
+
+
+[ ] Build File
+
+.jar or .war for deployment
+
+
+[ ] GitHub Repo
+
+Well-documented README.md
+
+Proper commit history
+
+Branches for features or staging
+
+
+
+
+---
+
+6. Implementation Roadmap
+
+1. Setup Project & Configuration
+
+
+2. Implement Entities + Repositories
+
+
+3. Create Registration/Login + Security
+
+
+4. Develop Product Catalog & Search
+
+
+5. Implement Cart + Checkout Logic
+
+
+6. Admin Product/Order Management
+
+
+7. Inventory + Notification System
+
+
+8. Frontend Styling + Responsiveness
+
+
+9. Add Optional Features
+
+
+10. Final Testing & Deployment
+
+
+11. Write Technical Docs & Upload to GitHub
