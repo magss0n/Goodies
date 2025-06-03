@@ -11,6 +11,11 @@ public class navigationController {
         return "category";
     }
 
+    @GetMapping("/")
+    public String home() {
+        return "redirect:/user/home";
+    }
+
     @GetMapping("/index")
     public String index() {
         return "index";

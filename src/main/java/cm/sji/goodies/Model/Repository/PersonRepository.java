@@ -13,9 +13,9 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
     @Query("SELECT p from Person p where p.class = Client ")
     Optional<List<Client>> findAllClients();
 
-    Optional<Client> findByEmail(String email);
+    Optional<Person> findByEmail(String email);
 
-    Optional<Client> findByName(String name);
+    Optional<Person> findByName(String name);
 
-    Optional<Client> findByPhone(String phone);
+    Optional<Person> findByPhone(String phone);
 }

@@ -24,11 +24,11 @@ public class PersonService {
     }
 
     public Client getClientByName(String name) {
-        return personRepository.findByName(name).orElse(null);
+        return (Client) personRepository.findByName(name).orElse(null);
     }
 
     public Client getClientByEmail(String email) {
-        return personRepository.findByEmail(email).orElse(null);
+        return (Client) personRepository.findByEmail(email).orElse(null);
     }
 
     public void addPerson(Person person) {
@@ -36,6 +36,6 @@ public class PersonService {
     }
 
     public Client getClientByPhone(String phone) {
-        return personRepository.findByPhone(phone).orElse(null);
+        return (Client) personRepository.findByPhone(phone).orElse(null);
     }
 }
