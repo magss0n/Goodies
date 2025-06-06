@@ -58,6 +58,6 @@ public class UserController {
 
     @GetMapping("/home")
     public String home(Model model) {
-        return "index";
+        return "user/index";
     }
 }

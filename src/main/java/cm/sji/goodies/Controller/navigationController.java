@@ -167,15 +167,7 @@ public class navigationController {
         return "purchaselist";
     }
 
-    @GetMapping("/productlist")
-    public String productlistpage() {
-        return "productlist";
-    }
 
-    @GetMapping("/saleslist")
-    public String saleslistpage() {
-        return "saleslist";
-    }
 
     @GetMapping("/storelist")
     public String storelistpage() {

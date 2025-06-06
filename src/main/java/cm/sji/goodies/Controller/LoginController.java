@@ -10,12 +10,13 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login(Model model) {
-        return "login";
+        return "user/login";
     }
 
     @GetMapping("/signup")
     public String signup(Model model) {
         model.addAttribute("client", new Client());
-        return "signup";
+        return "user/signup";
     }
+
 }
