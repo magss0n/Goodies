@@ -1,6 +1,7 @@
 package cm.sji.goodies.Model.Services;
 
 import cm.sji.goodies.Model.DTO.ProductDTO;
+import cm.sji.goodies.Model.Entities.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -16,7 +17,7 @@ public interface ProductService {
 
     Optional<ProductDTO> getProductById(Long id);
 
-    List<ProductDTO> getProductsByCategory(String category);
+//    List<ProductDTO> getProductsByCategory(String category);
 
     List<ProductDTO> searchProducts(String keyword);
 
@@ -27,4 +28,6 @@ public interface ProductService {
     void deleteProduct(Long id);
 
     List<ProductDTO> getLowStockProducts(Integer threshold);
+
+    Product getProductByName(String name);
 }

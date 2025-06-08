@@ -5,16 +5,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CartProduct {
+@Data
+@Table(name = "suppliers")
+public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long productId;
-    private String productName;
-    private Double unitPrice;
-    private Integer selectedQty;
-    private Double total;
+    private Long id;
+
+    private String name;
+    private String phoneNumber;
+
+    @ManyToMany(mappedBy = "suppliers")
+    Set<Product> products;
 }

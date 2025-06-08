@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -28,260 +28,12 @@
     <link rel="stylesheet" href="/assets-admin/css/style.css">
 </head>
 <body>
-<div id="global-loader">
-    <div class="whirly-loader"></div>
-</div>
 
 <div class="main-wrapper">
 
-    <div class="header">
+    <div th:replace="~{/fragments/adminFrag :: header(${admin.getName().substring(0,1).toUpperCase() + admin.getName().substring(1).toLowerCase()})}"></div>
 
-        <div class="header-left active">
-            <a th:href="@{admin/index}" class="logo">
-                <img src="/assets-admin/img/gooLogo.svg" alt="Goodies Logo">
-            </a>
-            <a th:href="@{admin/index}" class="logo-small">
-                <img src="/assets-admin/img/gooLogo.svg" alt="">
-            </a>
-            <a id="toggle_btn" href="javascript:void(0);">
-            </a>
-        </div>
-
-        <a id="mobile_btn" class="mobile_btn" href="#sidebar">
-<span class="bar-icon">
-<span></span>
-<span></span>
-<span></span>
-</span>
-        </a>
-
-        <ul class="nav user-menu">
-
-            <li class="nav-item">
-                <div class="top-nav-search">
-                    <a href="javascript:void(0);" class="responsive-search">
-                        <i class="fa fa-search"></i>
-                    </a>
-                    <form action="#">
-                        <div class="searchinputs">
-                            <input type="text" placeholder="Search Here ...">
-                            <div class="search-addon">
-                                <span><img src="/assets-admin/img/icons/closes.svg" alt="img"></span>
-                            </div>
-                        </div>
-                        <a class="btn" id="searchdiv"><img src="/assets-admin/img/icons/search.svg" alt="img"></a>
-                    </form>
-                </div>
-            </li>
-
-
-            <li class="nav-item dropdown has-arrow flag-nav">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="javascript:void(0);" role="button">
-                    <img src="/assets-admin/img/flags/us1.png" alt="" height="20">
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="/assets-admin/img/flags/us.png" alt="" height="16"> English
-                    </a>
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="/assets-admin/img/flags/fr.png" alt="" height="16"> French
-                    </a>
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="/assets-admin/img/flags/es.png" alt="" height="16"> Spanish
-                    </a>
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="/assets-admin/img/flags/de.png" alt="" height="16"> German
-                    </a>
-                </div>
-            </li>
-
-
-            <li class="nav-item dropdown">
-                <a href="javascript:void(0);" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-                    <img src="/assets-admin/img/icons/notification-bing.svg" alt="img"> <span
-                        class="badge rounded-pill">4</span>
-                </a>
-                <div class="dropdown-menu notifications">
-                    <div class="topnav-dropdown-header">
-                        <span class="notification-title">Notifications</span>
-                        <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
-                    </div>
-                    <div class="noti-content">
-                        <ul class="notification-list">
-                            <li class="notification-message">
-                                <a href="activities.html">
-                                    <div class="media d-flex">
-<span class="avatar flex-shrink-0">
-<img alt="" src="/assets-admin/img/profiles/avatar-02.jpg">
-</span>
-                                        <div class="media-body flex-grow-1">
-                                            <p class="noti-details"><span class="noti-title">John Doe</span> added new
-                                                task <span class="noti-title">Patient appointment booking</span></p>
-                                            <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="notification-message">
-                                <a href="activities.html">
-                                    <div class="media d-flex">
-<span class="avatar flex-shrink-0">
-<img alt="" src="/assets-admin/img/profiles/avatar-03.jpg">
-</span>
-                                        <div class="media-body flex-grow-1">
-                                            <p class="noti-details"><span class="noti-title">Tarah Shropshire</span>
-                                                changed the task name <span class="noti-title">Appointment booking with payment gateway</span>
-                                            </p>
-                                            <p class="noti-time"><span class="notification-time">6 mins ago</span></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="notification-message">
-                                <a href="activities.html">
-                                    <div class="media d-flex">
-<span class="avatar flex-shrink-0">
-<img alt="" src="/assets-admin/img/profiles/avatar-06.jpg">
-</span>
-                                        <div class="media-body flex-grow-1">
-                                            <p class="noti-details"><span class="noti-title">Misty Tison</span> added
-                                                <span class="noti-title">Domenic Houston</span> and <span
-                                                        class="noti-title">Claire Mapes</span> to project <span
-                                                        class="noti-title">Doctor available module</span></p>
-                                            <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="notification-message">
-                                <a href="activities.html">
-                                    <div class="media d-flex">
-<span class="avatar flex-shrink-0">
-<img alt="" src="/assets-admin/img/profiles/avatar-17.jpg">
-</span>
-                                        <div class="media-body flex-grow-1">
-                                            <p class="noti-details"><span class="noti-title">Rolland Webber</span>
-                                                completed task <span class="noti-title">Patient and Doctor video conferencing</span>
-                                            </p>
-                                            <p class="noti-time"><span class="notification-time">12 mins ago</span></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="notification-message">
-                                <a href="activities.html">
-                                    <div class="media d-flex">
-<span class="avatar flex-shrink-0">
-<img alt="" src="/assets-admin/img/profiles/avatar-13.jpg">
-</span>
-                                        <div class="media-body flex-grow-1">
-                                            <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span>
-                                                added new task <span class="noti-title">Private chat module</span></p>
-                                            <p class="noti-time"><span class="notification-time">2 days ago</span></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="topnav-dropdown-footer">
-                        <a href="activities.html">View all Notifications</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item dropdown has-arrow main-drop">
-                <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
-<span class="user-img"><img src="/assets-admin/img/profiles/avator1.jpg" alt="">
-<span class="status online"></span></span>
-                </a>
-                <div class="dropdown-menu menu-drop-user">
-                    <div class="profilename">
-                        <div class="profileset">
-<span class="user-img"><img src="/assets-admin/img/profiles/avator1.jpg" alt="">
-<span class="status online"></span></span>
-                            <div class="profilesets">
-                                <h6>John Doe</h6>
-                                <h5>Admin</h5>
-                            </div>
-                        </div>
-                        <hr class="m-0">
-                        <a class="dropdown-item" th:href="@{/profile}"> <i class="me-2" data-feather="user"></i> My
-                            Profile</a>
-                        <a class="dropdown-item" th:href="@{/generalsettings}"><i class="me-2"
-                                                                                  data-feather="settings"></i>Settings</a>
-                        <hr class="m-0">
-                        <a class="dropdown-item logout pb-0" th:href="@{/login.html}"><img
-                                src="/assets-admin/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-
-
-        <div class="dropdown mobile-user-menu">
-            <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-               aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-            <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" th:href="@{/profile}">My Profile</a>
-                <a class="dropdown-item" th:href="@{/generalsettings}">Settings</a>
-                <a class="dropdown-item" th:href="@{/login.html}"><img src="/assets-admin/img/icons/log-out.svg"
-                                                                       class="me-2" alt="img">Logout</a>
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-inner slimscroll">
-            <div id="sidebar-menu" class="sidebar-menu">
-                <ul>
-                    <li class="active">
-                        <a href="index.html"><img src="/assets-admin/img/icons/dashboard.svg"
-                                                  alt="img"><span> Dashboard</span> </a>
-                    </li>
-                    <li class="submenu">
-                        <a href="javascript:void(0);"><img src="/assets-admin/img/icons/product.svg" alt="img"><span> Product</span>
-                            <span class="menu-arrow"></span></a>
-                        <ul>
-                            <li><a th:href="@{/productlist}">Product List</a></li>
-                            <li><a th:href="@{/addproduct}">Add Product</a></li>
-                            <li><a th:href="@{/categorylist}">Category List</a></li>
-                            <li><a th:href="@{/addcategory}">Add Category</a></li>
-                            <li><a th:href="@{/subcategorylist.html}">Sub Category List</a></li>
-                            <!--<li><a href="subaddcategory.html">Add Sub Category</a></li> -->
-                        </ul>
-                    </li>
-                    <li class="submenu">
-                        <a href="javascript:void(0);"><img src="/assets-admin/img/icons/sales1.svg" alt="img"><span> Sales</span>
-                            <span class="menu-arrow"></span></a>
-                        <ul>
-                            <li><a href="saleslist.html">Orders</a></li>
-                        </ul>
-                    </li>
-                    <li class="submenu">
-                        <a href="javascript:void(0);"><img src="/assets-admin/img/icons/purchase1.svg" alt="img"><span> Purchase</span>
-                            <span class="menu-arrow"></span></a>
-                        <ul>
-                            <li><a href="purchaselist.html">Purchase List</a></li>
-                            <li><a href="addpurchase.html">Add Purchase</a></li>
-                        </ul>
-                    </li>
-                    <li class="submenu">
-                        <a href="javascript:void(0);"><img src="/assets-admin/img/icons/users1.svg" alt="img"><span> People</span>
-                            <span class="menu-arrow"></span></a>
-                        <ul>
-                            <li><a th:href="@{/customerlist}">Customer List</a></li>
-                            <li><a th:href="@{/supplierlist}">Supplier List</a></li>
-                            <li><a th:href="@{/addsupplier}">Add Supplier </a></li>
-                            <li><a th:href="@{/userlist}">User List</a></li>
-                            <li><a th:href="@{/adduser}">Add User</a></li>
-                        </ul>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <div th:replace="~{/fragments/adminFrag :: sidebar}"></div>
 
     <div class="page-wrapper">
         <div class="content">
@@ -314,8 +66,7 @@
                                 </a>
                             </div>
                             <div class="search-input">
-                                <a class="btn btn-searchset"><img src="/assets-admin/img/icons/search-white.svg"
-                                                                  alt="img"></a>
+                                <a class="btn btn-searchset"><img src="/assets-admin/img/icons/search-white.svg" alt="img"></a>
                             </div>
                         </div>
                         <div class="wordset">
@@ -399,303 +150,33 @@
                         <table class="table  datanew">
                             <thead>
                             <tr>
-                                <th>
-                                    <label class="checkboxs">
-                                        <input type="checkbox" id="select-all">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </th>
                                 <th>Product Name</th>
-                                <th>SKU</th>
                                 <th>Category</th>
                                 <th>Brand</th>
-                                <th>price</th>
-                                <th>Unit</th>
+                                <th>Price</th>
+                                <th>Size</th>
+                                <th>Type</th>
                                 <th>Qty</th>
-                                <th>Created By</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
+                            <th:block th:if="products==null">There are no products for now</th:block>
+                            <tr th:each="product: ${products}">
+                                <td class="d-flex align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-seam-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003zM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461z"/>
+                                    </svg>
+                                    <span class="ms-3" th:text="${product.getName().split(' ')[0]}"></span>
+                                </td>
+                                <td th:text="${product.getCategory().getName().substring(0,1).toUpperCase() + product.getCategory().getName().substring(1).toUpperCase()}">PT001</td>
+                                <td th:text="${product.getName().split(' ')[1]}">Computers</td>
+                                <td th:text="${product.getUnitPrice()} + ' XAF'"> N/D</td>
+                                <td th:text="${product.getSize()}">1500.00</td>
+                                <td th:text="${product.getType().substring(0,1).toUpperCase() + product.getType().substring(1).toLowerCase()}">pc</td>
+                                <td th:text="${product.getQuantity()}">100.00</td>
                                 <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="productimgname">
-                                    <a href="javascript:void(0);" class="product-img">
-                                        <img src="/assets-admin/img/product/product1.jpg" alt="product">
-                                    </a>
-                                    <a href="javascript:void(0);">Macbook pro</a>
-                                </td>
-                                <td>PT001</td>
-                                <td>Computers</td>
-                                <td>N/D</td>
-                                <td>1500.00</td>
-                                <td>pc</td>
-                                <td>100.00</td>
-                                <td>Admin</td>
-                                <td>
-                                    <a class="me-3" href="product-details.html">
-                                        <img src="/assets-admin/img/icons/eye.svg" alt="img">
-                                    </a>
-                                    <a class="me-3" href="editproduct.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="productimgname">
-                                    <a href="javascript:void(0);" class="product-img">
-                                        <img src="/assets-admin/img/product/product4.jpg" alt="product">
-                                    </a>
-                                    <a href="javascript:void(0);">Strawberry</a>
-                                </td>
-                                <td>PT004</td>
-                                <td>Fruits</td>
-                                <td>N/D</td>
-                                <td>10.00</td>
-                                <td>pc</td>
-                                <td>100.00</td>
-                                <td>Admin</td>
-                                <td>
-                                    <a class="me-3" href="product-details.html">
-                                        <img src="/assets-admin/img/icons/eye.svg" alt="img">
-                                    </a>
-                                    <a class="me-3" href="editproduct.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="productimgname">
-                                    <a href="javascript:void(0);" class="product-img">
-                                        <img src="/assets-admin/img/product/product5.jpg" alt="product">
-                                    </a>
-                                    <a href="javascript:void(0);">Avocat</a>
-                                </td>
-                                <td>PT005</td>
-                                <td>Accessories</td>
-                                <td>N/D</td>
-                                <td>10.00</td>
-                                <td>pc</td>
-                                <td>150.00</td>
-                                <td>Admin</td>
-                                <td>
-                                    <a class="me-3" href="product-details.html">
-                                        <img src="/assets-admin/img/icons/eye.svg" alt="img">
-                                    </a>
-                                    <a class="me-3" href="editproduct.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="productimgname">
-                                    <a href="javascript:void(0);" class="product-img">
-                                        <img src="/assets-admin/img/product/product6.jpg" alt="product">
-                                    </a>
-                                    <a href="javascript:void(0);">Macbook Pro</a>
-                                </td>
-                                <td>PT006</td>
-                                <td>Shoes</td>
-                                <td>N/D</td>
-                                <td>10.00</td>
-                                <td>pc</td>
-                                <td>100.00</td>
-                                <td>Admin</td>
-                                <td>
-                                    <a class="me-3" href="product-details.html">
-                                        <img src="/assets-admin/img/icons/eye.svg" alt="img">
-                                    </a>
-                                    <a class="me-3" href="editproduct.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="productimgname">
-                                    <a href="javascript:void(0);" class="product-img">
-                                        <img src="/assets-admin/img/product/product7.jpg" alt="product">
-                                    </a>
-                                    <a href="javascript:void(0);">Apple Earpods</a>
-                                </td>
-                                <td>PT007</td>
-                                <td>Shoes</td>
-                                <td>N/D</td>
-                                <td>10.00</td>
-                                <td>pc</td>
-                                <td>100.00</td>
-                                <td>Admin</td>
-                                <td>
-                                    <a class="me-3" href="product-details.html">
-                                        <img src="/assets-admin/img/icons/eye.svg" alt="img">
-                                    </a>
-                                    <a class="me-3" href="editproduct.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="productimgname">
-                                    <a href="javascript:void(0);" class="product-img">
-                                        <img src="/assets-admin/img/product/product8.jpg" alt="product">
-                                    </a>
-                                    <a href="javascript:void(0);">iPhone 11 </a>
-                                </td>
-                                <td>PT008</td>
-                                <td>Fruits</td>
-                                <td>N/D</td>
-                                <td>10.00</td>
-                                <td>pc</td>
-                                <td>100.00</td>
-                                <td>Admin</td>
-                                <td>
-                                    <a class="me-3" href="product-details.html">
-                                        <img src="/assets-admin/img/icons/eye.svg" alt="img">
-                                    </a>
-                                    <a class="me-3" href="editproduct.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="productimgname">
-                                    <a href="javascript:void(0);" class="product-img">
-                                        <img src="/assets-admin/img/product/product9.jpg" alt="product">
-                                    </a>
-                                    <a href="javascript:void(0);">samsung </a>
-                                </td>
-                                <td>PT009</td>
-                                <td>Earphones</td>
-                                <td>N/D</td>
-                                <td>10.00</td>
-                                <td>pc</td>
-                                <td>100.00</td>
-                                <td>Admin</td>
-                                <td>
-                                    <a class="me-3" href="product-details.html">
-                                        <img src="/assets-admin/img/icons/eye.svg" alt="img">
-                                    </a>
-                                    <a class="me-3" href="editproduct.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="productimgname">
-                                    <a href="javascript:void(0);" class="product-img">
-                                        <img src="/assets-admin/img/product/product11.jpg" alt="product">
-                                    </a>
-                                    <a href="javascript:void(0);">Banana</a>
-                                </td>
-                                <td>PT0010</td>
-                                <td>Health Care</td>
-                                <td>N/D</td>
-                                <td>10.00</td>
-                                <td>kg</td>
-                                <td>100.00</td>
-                                <td>Admin</td>
-                                <td>
-                                    <a class="me-3" href="product-details.html">
-                                        <img src="/assets-admin/img/icons/eye.svg" alt="img">
-                                    </a>
-                                    <a class="me-3" href="editproduct.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="productimgname">
-                                    <a href="javascript:void(0);" class="product-img">
-                                        <img src="/assets-admin/img/product/product17.jpg" alt="product">
-                                    </a>
-                                    <a href="javascript:void(0);">Limon</a>
-                                </td>
-                                <td>PT0011</td>
-                                <td>Health Care</td>
-                                <td>N/D</td>
-                                <td>10.00</td>
-                                <td>kg</td>
-                                <td>100.00</td>
-                                <td>Admin</td>
-                                <td>
-                                    <a class="me-3" href="product-details.html">
+                                    <a class="me-3" th:href="@{/admin/product-details}">
                                         <img src="/assets-admin/img/icons/eye.svg" alt="img">
                                     </a>
                                     <a class="me-3" href="editproduct.html">
@@ -728,89 +209,155 @@
             <div class="modal-body">
                 <div class="card">
                     <div class="card-body">
-                        <form id="addProductForm">
+                        <form id="addProductForm" method="post" th:action="@{/admin/addproduct}" th:object="${newProduct}" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>Product Name</label>
-                                        <input type="text" class="form-control">
+                                        <label for="prodName">Product Name</label>
+                                        <input type="text" class="form-control" name="prodName" id="prodName" th:field="*{name}" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>Category</label>
-                                        <select class="form-control select">
-                                            <option>Choose Category</option>
-                                            <option>Shirt</option>
-                                            <option>Trousers</option>
-                                            <option>Hoodie</option>
-                                            <option>Shoe</option>
+                                        <label for="category">Category</label>
+                                        <select class="form-control" id="category" name="category" th:field="*{category}" required>
+                                            <option value="" selected>--Choose Category--</option>
+                                            <option th:each="cat: ${categories}" th:text="${cat.name}" th:value="${cat.getId()}"></option>
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-lg-3 col-sm-6 col-12" id="sizeDress" hidden>
+                                    <div class="form-group">
+                                        <label for="size">Size</label>
+                                        <select class="form-control" id="size" th:field="*{size}">
+                                            <option value="" selected>--Select size--</option>
+                                            <option value="XS">XS</option>
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="XXL">XXL</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-sm-6 col-12" id="sizeShoe" hidden>
+                                    <div class="form-group">
+                                        <label for="shoe">Size</label>
+                                        <input type="number" class="form-control" min="1" list="sizes" id="shoe" required placeholder="Enter size" name="size">
+                                        <datalist class="" id="sizes" >
+                                            <option value="36">36</option>
+                                            <option value="38">38</option>
+                                            <option value="42">42</option>
+                                            <option value="44">44</option>
+                                        </datalist>
+                                    </div>
+                                </div>
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>Type</label>
-                                        <select class="form-control select">
-                                            <option>Choose type</option>
-                                            <option>For Men</option>
-                                            <option>Women's wear</option>
-                                            <option>Mixed</option>
-
+                                        <label for="type">Type</label>
+                                        <select class="form-control" id="type" name="type" required th:field="*{type}">
+                                            <option value="" selected>--Choose type--</option>
+                                            <option value="men">For Men</option>
+                                            <option value="women">Women's wear</option>
+                                            <option value="mixed">Mixed</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Brand</label>
-                                        <input list="brands" class="form-control" placeholder="Enter product brand">
+                                        <input list="brands" class="form-control" placeholder="Enter product brand" name="brand" required>
                                         <datalist id="brands" class="">
-                                            <option>Choose Brand</option>
-                                            <option>Brand</option>
-                                            <option>Brand</option>
-                                            <option>Brand</option>
+                                            <option value="GUCCI">GUCCI</option>
+                                            <option value="LOUIS VUITTON">LOUIS VUITTON</option>
+                                            <option value="H&M">H&M</option>
+                                            <option value="BALENCIAGA">BALENCIAGA</option>
                                         </datalist>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Price</label>
-                                        <input type="number" class="form-control">
+                                        <input type="number" step="0.01" min="1" class="form-control" id="price" th:field="*{unitPrice}" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Minimum Qty</label>
-                                        <input type="number" class="form-control">
+                                        <input type="number" class="form-control" min="0" th:field="*{minQuantity}" list="minqtties" id="minQty" required>
+                                        <datalist id="minqtties">
+                                            <option value="10">10</option>
+                                            <option value="20">20</option>
+                                            <option value="30">30</option>
+                                            <option value="40">40</option>
+                                            <option value="50">50</option>
+                                        </datalist>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Initial Quantity</label>
-                                        <input type="text" class="form-control">
+                                        <input type="number" class="form-control" min="0" th:field="*{quantity}" id="qty" list="qtties" required>
+                                        <datalist id="qtties">
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                            <option value="150">150</option>
+                                            <option value="200">200</option>
+                                            <option value="250">250</option>
+                                        </datalist>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <textarea class="form-control"></textarea>
+                                        <textarea class="form-control" th:field="*{description}" required></textarea>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>Product image</label>
-                                        <input type="file" class="form-control" datatype="">
+                                        <div class="image-upload">
+                                            <input type="file" id="productImage" accept="image/jpeg, image/png" name="photo" required>
+                                            <div class="image-uploads">
+                                                <img src="/assets-admin/img/icons/upload.svg" alt="img">
+                                                <h4 id="imgName"> Drag and drop a file to upload new image</h4>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="col-lg-3 col-sm-6 col-12" id="supplier">
+                                    <div class="form-group" >
+                                        <label for="supp">Supplier</label>
+                                        <select class="form-control" id="supp" name="supplierId" required>
+                                            <option value="" selected>--Choose Supplier--</option>
+                                            <option th:if="${suppliers != null}" th:each="supplier: ${suppliers}" th:value="${supplier.getId()}" th:text="${supplier.getName()}"></option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-primary text-white" type="button" id="createSupp">Create Supplier</button>
+                                </div>
+
+                                <div class="col-lg-3 col-sm-6 col-12" id="supplierName" hidden>
+                                    <div class="form-group">
+                                        <label>Supplier Name</label>
+                                        <input type="text" minlength="1" class="form-control" name="supplierName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Supplier Phone</label>
+                                        <input type="number" min="600000000" max="699999999" name="supplierPhone" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" onclick="console.log('SOUMETSSS')" onsubmit="console.log('nooooooonn')" class="btn btn-submit" id="save-btn">Save</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-submit">Save</button>
-            </div>
+
         </div>
     </div>
 </div>
@@ -818,7 +365,6 @@
 
 <script src="/assets-admin/js/jquery-3.6.0.min.js"></script>
 
-<script src="/assets-admin/js/product.js"></script>
 
 <script src="/assets-admin/js/feather.min.js"></script>
 
@@ -835,5 +381,83 @@
 <script src="/assets-admin/plugins/sweetalert/sweetalerts.min.js"></script>
 
 <script src="/assets-admin/js/script.js"></script>
+<script>
+    let shoeSize = document.querySelector("#sizeShoe")
+    let sizeDress = document.querySelector("#sizeDress")
+    let categories =document.querySelector("#category")
+    let saveBtn = document.querySelector("#save-btn")
+    let createSupplier = document.querySelector("#createSupp")
+    let productForm = document.querySelector("form")
+    let supplierSelect = document.querySelector("#supp")
+    let imgInp = document.querySelector("#productImage")
+
+    imgInp.addEventListener('input', () => {
+        console.log("Image :" + imgInp.value)
+        document.querySelector("#imgName").innerHTML = imgInp.value
+    })
+
+    supplierSelect.addEventListener("input", () => {
+        document.querySelector("#supplierName").hidden = true
+        document.getElementsByName("supplierName")[0].required = false
+        document.getElementsByName("supplierPhone")[0].required = false
+        document.querySelector("#supp").required = true
+    })
+
+
+    createSupplier.addEventListener("click", () => {
+        document.querySelector("#supplierName").hidden = false
+        document.querySelector("#createSupp").hidden = true
+        document.querySelector("#supp").required = false
+
+    })
+    console.log(categories)
+
+    function submitForm() {
+        if (productForm.checkValidity()){
+            productForm.submit()
+        }
+    }
+
+    categories.addEventListener("change", (ev) => {
+        console.log("\nTa mere\n")
+        if(ev.target.value === "shoe"){
+            shoeSize.hidden = false
+            sizeDress.hidden = true
+            shoeSize.querySelector("input").required = true
+            sizeDress.querySelector("select").required = false
+        } else{
+            shoeSize.hidden = true
+            sizeDress.hidden = false
+            shoeSize.querySelector("input").required = false
+            sizeDress.querySelector("select").required = true
+        }
+    })
+
+    let minQty = document.querySelector("#minQty")
+    let qty = document.querySelector("#qty")
+
+    let validQty = () => {
+        if (Number(minQty.value) > Number(qty.value)) {
+            minQty.style.borderColor = "red"
+            qty.style.borderColor = "red"
+            saveBtn.disabled = true
+            console.log(saveBtn)
+        } else{
+            saveBtn.disabled = false
+            minQty.style.borderColor = "green"
+            qty.style.borderColor = "green"
+        }
+    }
+
+    qty.addEventListener("input",() => {
+        validQty()
+    });
+
+    minQty.addEventListener("input", () => {
+        validQty()
+    });
+
+
+</script>
 </body>
 </html>

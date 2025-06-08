@@ -1,8 +1,10 @@
 package cm.sji.goodies.Model.ServiceImpl;
 
 import cm.sji.goodies.Model.DTO.ProductDTO;
+import cm.sji.goodies.Model.Entities.Category;
 import cm.sji.goodies.Model.Entities.Product;
 import cm.sji.goodies.Model.Repository.ProductRepository;
+import cm.sji.goodies.Model.Services.CategoryService;
 import cm.sji.goodies.Model.Services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,10 +20,12 @@ import java.util.stream.Collectors;
 public class ProductServiceImpl implements ProductService{
 
     private final ProductRepository productRepository;
+    private final CategoryService categoryService;
 
     @Autowired
-    public ProductServiceImpl(ProductRepository productRepository) {
+    public ProductServiceImpl(ProductRepository productRepository, CategoryService categoryService) {
         this.productRepository = productRepository;
+        this.categoryService = categoryService;
     }
 
     @Override
@@ -51,12 +55,12 @@ public class ProductServiceImpl implements ProductService{
                 .map(this::mapToDTO);
     }
 
-    @Override
-    public List<ProductDTO> getProductsByCategory(String category) {
-        return productRepository.findByCategory(category).stream()
-                .map(this::mapToDTO)
-                .collect(Collectors.toList());
-    }
+//    @Override
+//    public List<ProductDTO> getProductsByCategory(String category) {
+//        return productRepository.findByCategory(category).stream()
+//                .map(this::mapToDTO)
+//                .collect(Collectors.toList());
+//    }
 
     @Override
     public List<ProductDTO> searchProducts(String keyword) {
@@ -95,6 +99,11 @@ public class ProductServiceImpl implements ProductService{
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public Product getProductByName(String name) {
+        return productRepository.findByName(name).orElse(null);
+    }
+
     // Helper methods for mapping between Entity and DTO
     private ProductDTO mapToDTO(Product product) {
         return ProductDTO.builder()
@@ -102,21 +111,26 @@ public class ProductServiceImpl implements ProductService{
                 .name(product.getName())
                 .description(product.getDescription())
                 .unitPrice(product.getUnitPrice())
-                .imageURL(product.getImageURL())
                 .category(product.getCategory())
                 .quantity(product.getQuantity())
+                .size(product.getSize())
+                .type(product.getType())
+                .minQuantity(product.getMinQuantity())
                 .build();
     }
 
     private Product mapToEntity(ProductDTO productDTO) {
         Product product = new Product();
-        product.setId(productDTO.getId());
         product.setName(productDTO.getName());
         product.setDescription(productDTO.getDescription());
+        product.setType(productDTO.getType());
+        product.setSize(productDTO.getSize());
         product.setUnitPrice(productDTO.getUnitPrice());
-        product.setImageURL(productDTO.getImageURL());
         product.setCategory(productDTO.getCategory());
         product.setQuantity(productDTO.getQuantity());
+        product.setMinQuantity(productDTO.getMinQuantity());
         return product;
     }
+
+
 }

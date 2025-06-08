@@ -9,12 +9,13 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    List<Product> findByCategory(String category);
-
-    Page<Product> findByCategory(String category, Pageable pageable);
+//    List<Product> findByCategory(String category);
+//
+//    Page<Product> findByCategory(String category, Pageable pageable);
 
     List<Product> findByNameContainingIgnoreCase(String name);
 
@@ -26,4 +27,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query("SELECT p FROM Product p WHERE p.quantity < :threshold")
     List<Product> findLowStockProducts(@Param("threshold") Integer threshold);
+
+    Optional<Product> findByName(String name);
 }

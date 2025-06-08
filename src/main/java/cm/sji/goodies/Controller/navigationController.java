@@ -112,18 +112,6 @@ public class navigationController {
     }
 
 
-    @GetMapping("/categorylist")
-    public String categorylistpage() {
-        return "categorylist";
-    }
-
-
-    @GetMapping("/customerlist")
-    public String customerlistpage() {
-        return "customerlist";
-    }
-
-
     @GetMapping("/edit-sales")
     public String editsalespage() {
         return "editsales";
@@ -141,15 +129,9 @@ public class navigationController {
         return "editproduct";
     }
 
-
     @GetMapping("/editpurchase")
     public String editpurchasepage() {
         return "editpurchase";
-    }
-
-    @GetMapping("/editsubcategory")
-    public String editsubcategorypage() {
-        return "editsubcategory";
     }
 
     @GetMapping("/editsupplier")
@@ -167,8 +149,6 @@ public class navigationController {
         return "purchaselist";
     }
 
-
-
     @GetMapping("/storelist")
     public String storelistpage() {
         return "storelist";
@@ -177,16 +157,6 @@ public class navigationController {
     @GetMapping("/subcategorylist")
     public String subcategorylistpage() {
         return "subcategorylist";
-    }
-
-    @GetMapping("/supplierlist")
-    public String supplierlistpage() {
-        return "supplierlist";
-    }
-
-    @GetMapping("/userlist")
-    public String userlistpage() {
-        return "userlist";
     }
 
     @GetMapping("/profile")
