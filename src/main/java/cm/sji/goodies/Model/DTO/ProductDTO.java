@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -15,11 +17,14 @@ public class ProductDTO {
     private Long id;
     private String name;
     private String description;
-    private Double unitPrice;
-//    private String imageURL;
+    private Double sellPrice;
+    private Double costPrice;
     private Category category;
     private Integer quantity;
     private String size;
     private Integer minQuantity;
     private String type;
+    private LocalDateTime creationTime;
+    private String imageUrl;
+
 }

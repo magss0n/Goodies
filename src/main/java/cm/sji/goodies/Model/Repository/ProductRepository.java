@@ -19,14 +19,21 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     List<Product> findByNameContainingIgnoreCase(String name);
 
-    @Query("SELECT p FROM Product p WHERE p.name LIKE %:keyword% OR p.description LIKE %:keyword%")
+    @Query("SELECT p FROM Product p WHERE LOWER( p.name) LIKE %:keyword% OR LOWER(p.description) LIKE %:keyword%")
     List<Product> searchByKeyword(@Param("keyword") String keyword);
 
-    @Query("SELECT p FROM Product p WHERE p.unitPrice BETWEEN :minPrice AND :maxPrice")
+    @Query("SELECT p FROM Product p WHERE p.sellPrice BETWEEN :minPrice AND :maxPrice")
     List<Product> findByPriceRange(@Param("minPrice") Double minPrice, @Param("maxPrice") Double maxPrice);
 
     @Query("SELECT p FROM Product p WHERE p.quantity < :threshold")
     List<Product> findLowStockProducts(@Param("threshold") Integer threshold);
 
+    @Query("SELECT p FROM Product p WHERE p.type = :type AND p.category.id = :categoryId")
+    List<Product> searchByTypeCategory(@Param("type") String type,
+                                  @Param("categoryId") Long categoryId);
+
     Optional<Product> findByName(String name);
+
+    List<Product> findAllByCategory_Name(String categoryName);
+
 }

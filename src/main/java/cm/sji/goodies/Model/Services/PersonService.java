@@ -35,7 +35,11 @@ public class PersonService {
         personRepository.save(person);
     }
 
-    public Client getClientByPhone(String phone) {
-        return (Client) personRepository.findByPhone(phone).orElse(null);
+    public Person getClientByPhone(String phone) {
+        return  personRepository.findByPhone(phone).orElse(null);
+    }
+
+    public Person getPersonById(Long id) {
+        return personRepository.findById(id).orElse(null);
     }
 }

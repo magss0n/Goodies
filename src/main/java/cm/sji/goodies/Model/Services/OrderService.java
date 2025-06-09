@@ -2,6 +2,7 @@ package cm.sji.goodies.Model.Services;
 
 import cm.sji.goodies.Model.DTO.CartProductDTO;
 import cm.sji.goodies.Model.DTO.OrderDTO;
+import cm.sji.goodies.Model.Entities.Order;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -25,4 +26,10 @@ public interface OrderService {
     void deleteOrder(Long id);
 
     Long countOrdersByStatus(String status);
+
+    Order saveOrder(Order order);
+    List<Order> getAllOrdersByClientId(Long clientId);
+    List<Order> getAllOrdersByStatus(String status);
+    List<Order> findAllOrders();
+    Order getOrderbyId(Long id);
 }

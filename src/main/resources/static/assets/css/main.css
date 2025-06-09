@@ -2447,7 +2447,7 @@ section,
 }
 
 .best-sellers .product-card:hover .default-image {
-  opacity: 0;
+  opacity: 1;
 }
 
 .best-sellers .product-card:hover .hover-image {
@@ -4165,7 +4165,7 @@ section,
   gap: 0.75rem;
 }
 
-.category-product-list .product-price span {
+.product-price {
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--heading-color);

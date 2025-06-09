@@ -24,17 +24,8 @@ public class Order {
     private LocalDate purchaseDate;
     private String status;
 
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public class CartProduct {
-
-        @OneToOne
-        private Product product;
-        private Integer selectedQty;
-        private Double total;
-    }
-
+    @OneToMany(mappedBy = "order")
+    private List<CartProduct> cartProducts;
 
 
 }

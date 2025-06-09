@@ -1,7 +1,6 @@
 package cm.sji.goodies.Model.ServiceImpl;
 
 import cm.sji.goodies.Model.DTO.ProductDTO;
-import cm.sji.goodies.Model.Entities.Category;
 import cm.sji.goodies.Model.Entities.Product;
 import cm.sji.goodies.Model.Repository.ProductRepository;
 import cm.sji.goodies.Model.Services.CategoryService;
@@ -34,6 +33,12 @@ public class ProductServiceImpl implements ProductService{
         Product product = mapToEntity(productDTO);
         Product savedProduct = productRepository.save(product);
         return mapToDTO(savedProduct);
+    }
+
+    @Override
+    public List<Product> getProductsByTypeCategory(String type, Long categoryId) {
+        System.out.println("type: " + type + " category: " + categoryId);
+        return productRepository.searchByTypeCategory(type, categoryId);
     }
 
     @Override
@@ -104,18 +109,37 @@ public class ProductServiceImpl implements ProductService{
         return productRepository.findByName(name).orElse(null);
     }
 
+    @Override
+    public Product saveProduct(Product product) {
+        return productRepository.save(product);
+
+    }
+
+    @Override
+    public List<Product> getProductsByCategory(String categoryName) {
+        return productRepository.findAllByCategory_Name(categoryName);
+    }
+
+    @Override
+    public Product findById(long id) {
+        return productRepository.findById(id).orElse(null);
+    }
+
     // Helper methods for mapping between Entity and DTO
     private ProductDTO mapToDTO(Product product) {
         return ProductDTO.builder()
                 .id(product.getId())
                 .name(product.getName())
                 .description(product.getDescription())
-                .unitPrice(product.getUnitPrice())
+                .costPrice(product.getCostPrice())
+                .sellPrice(product.getSellPrice())
                 .category(product.getCategory())
                 .quantity(product.getQuantity())
                 .size(product.getSize())
                 .type(product.getType())
                 .minQuantity(product.getMinQuantity())
+                .creationTime(product.getCreationTime())
+                .imageUrl(product.getImageUrl())
                 .build();
     }
 
@@ -125,10 +149,12 @@ public class ProductServiceImpl implements ProductService{
         product.setDescription(productDTO.getDescription());
         product.setType(productDTO.getType());
         product.setSize(productDTO.getSize());
-        product.setUnitPrice(productDTO.getUnitPrice());
+        product.setCostPrice(productDTO.getCostPrice());
+        product.setSellPrice(productDTO.getSellPrice());
         product.setCategory(productDTO.getCategory());
         product.setQuantity(productDTO.getQuantity());
         product.setMinQuantity(productDTO.getMinQuantity());
+        product.setImageUrl(productDTO.getImageUrl());
         return product;
     }
 

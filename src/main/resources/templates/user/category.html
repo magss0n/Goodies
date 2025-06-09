@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Category - eStore Bootstrap Template</title>
+  <title>Product Category - Goodies</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -18,15 +18,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="/assets/css/main.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: eStore
@@ -109,7 +109,7 @@
       <div class="d-flex py-3 align-items-center justify-content-between">
 
         <!-- Logo -->
-        <a th:href="@{/index}" class="logo d-flex align-items-center">
+        <a th:href="@{/user/home}" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <img src="/assets/img/gooLogo.svg" alt="Goodies Logo">
           <!--            <h1 class="sitename">eStore</h1>-->
@@ -284,7 +284,7 @@
                         <div class="product-grid">
                           <div class="product-card">
                             <div class="product-image">
-                              <img src="/assets/img/product/product-1.webp" alt="Featured Product" loading="lazy">
+                              <img src="//assets/img/product/product-1.webp" alt="Featured Product" loading="lazy">
                             </div>
                             <div class="product-info">
                               <h5>Premium Headphones</h5>
@@ -294,7 +294,7 @@
                           </div>
                           <div class="product-card">
                             <div class="product-image">
-                              <img src="/assets/img/product/product-2.webp" alt="Featured Product" loading="lazy">
+                              <img src="//assets/img/product/product-2.webp" alt="Featured Product" loading="lazy">
                             </div>
                             <div class="product-info">
                               <h5>Smart Watch</h5>
@@ -304,7 +304,7 @@
                           </div>
                           <div class="product-card">
                             <div class="product-image">
-                              <img src="/assets/img/product/product-3.webp" alt="Featured Product" loading="lazy">
+                              <img src="//assets/img/product/product-3.webp" alt="Featured Product" loading="lazy">
                             </div>
                             <div class="product-info">
                               <h5>Wireless Earbuds</h5>
@@ -314,7 +314,7 @@
                           </div>
                           <div class="product-card">
                             <div class="product-image">
-                              <img src="/assets/img/product/product-4.webp" alt="Featured Product" loading="lazy">
+                              <img src="//assets/img/product/product-4.webp" alt="Featured Product" loading="lazy">
                             </div>
                             <div class="product-info">
                               <h5>Bluetooth Speaker</h5>
@@ -330,7 +330,7 @@
                         <div class="product-grid">
                           <div class="product-card">
                             <div class="product-image">
-                              <img src="/assets/img/product/product-5.webp" alt="New Arrival" loading="lazy">
+                              <img src="//assets/img/product/product-5.webp" alt="New Arrival" loading="lazy">
                               <span class="badge-new">New</span>
                             </div>
                             <div class="product-info">
@@ -341,7 +341,7 @@
                           </div>
                           <div class="product-card">
                             <div class="product-image">
-                              <img src="/assets/img/product/product-6.webp" alt="New Arrival" loading="lazy">
+                              <img src="//assets/img/product/product-6.webp" alt="New Arrival" loading="lazy">
                               <span class="badge-new">New</span>
                             </div>
                             <div class="product-info">
@@ -352,7 +352,7 @@
                           </div>
                           <div class="product-card">
                             <div class="product-image">
-                              <img src="/assets/img/product/product-7.webp" alt="New Arrival" loading="lazy">
+                              <img src="//assets/img/product/product-7.webp" alt="New Arrival" loading="lazy">
                               <span class="badge-new">New</span>
                             </div>
                             <div class="product-info">
@@ -363,7 +363,7 @@
                           </div>
                           <div class="product-card">
                             <div class="product-image">
-                              <img src="/assets/img/product/product-8.webp" alt="New Arrival" loading="lazy">
+                              <img src="//assets/img/product/product-8.webp" alt="New Arrival" loading="lazy">
                               <span class="badge-new">New</span>
                             </div>
                             <div class="product-info">
@@ -380,7 +380,7 @@
                         <div class="product-grid">
                           <div class="product-card">
                             <div class="product-image">
-                              <img src="/assets/img/product/product-9.webp" alt="Sale Product" loading="lazy">
+                              <img src="//assets/img/product/product-9.webp" alt="Sale Product" loading="lazy">
                               <span class="badge-sale">-30%</span>
                             </div>
                             <div class="product-info">
@@ -391,7 +391,7 @@
                           </div>
                           <div class="product-card">
                             <div class="product-image">
-                              <img src="/assets/img/product/product-10.webp" alt="Sale Product" loading="lazy">
+                              <img src="//assets/img/product/product-10.webp" alt="Sale Product" loading="lazy">
                               <span class="badge-sale">-25%</span>
                             </div>
                             <div class="product-info">
@@ -402,7 +402,7 @@
                           </div>
                           <div class="product-card">
                             <div class="product-image">
-                              <img src="/assets/img/product/product-11.webp" alt="Sale Product" loading="lazy">
+                              <img src="//assets/img/product/product-11.webp" alt="Sale Product" loading="lazy">
                               <span class="badge-sale">-40%</span>
                             </div>
                             <div class="product-info">
@@ -413,7 +413,7 @@
                           </div>
                           <div class="product-card">
                             <div class="product-image">
-                              <img src="/assets/img/product/product-12.webp" alt="Sale Product" loading="lazy">
+                              <img src="//assets/img/product/product-12.webp" alt="Sale Product" loading="lazy">
                               <span class="badge-sale">-20%</span>
                             </div>
                             <div class="product-info">
@@ -608,7 +608,7 @@
                           </div>
                           <div class="featured-section">
                             <div class="featured-image">
-                              <img src="/assets/img/product/product-f-1.webp" alt="Women's Heels Collection">
+                              <img src="//assets/img/product/product-f-1.webp" alt="Women's Heels Collection">
                               <div class="featured-content">
                                 <h3>Women's<br>Bags<br>Collection</h3>
                                 <a href="#" class="btn-shop">Shop now</a>
@@ -676,7 +676,7 @@
                           </div>
                           <div class="featured-section">
                             <div class="featured-image">
-                              <img src="/assets/img/product/product-m-4.webp" alt="Men's Footwear Collection">
+                              <img src="//assets/img/product/product-m-4.webp" alt="Men's Footwear Collection">
                               <div class="featured-content">
                                 <h3>Men's<br>Footwear<br>Collection</h3>
                                 <a href="#" class="btn-shop">Shop now</a>
@@ -744,7 +744,7 @@
                           </div>
                           <div class="featured-section">
                             <div class="featured-image">
-                              <img src="/assets/img/product/product-9.webp" alt="Kids' New Arrivals">
+                              <img src="//assets/img/product/product-9.webp" alt="Kids' New Arrivals">
                               <div class="featured-content">
                                 <h3>Kids<br>New<br>Arrivals</h3>
                                 <a href="#" class="btn-shop">Shop now</a>
@@ -813,113 +813,111 @@
 
               <ul class="category-tree list-unstyled mb-0">
                 <!-- Clothing Category -->
-                <li class="category-item">
-                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-clothing-subcategories" aria-expanded="false" aria-controls="categories-1-clothing-subcategories">
-                    <a href="javascript:void(0)" class="category-link">Clothing</a>
+                <li th:each="cat: ${categories}" class="category-item">
+                  <div  class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" th:data-bs-target="${'#categories-'+cat.getId()+'-clothing-subcategories'}" aria-expanded="false" aria-controls="categories-1-clothing-subcategories">
+                    <a href="javascript:void(0)" class="category-link" th:text="${cat.getName().substring(0,1).toUpperCase()+cat.getName().substring(1).toLowerCase()}">Clothing</a>
                     <span class="category-toggle">
                       <i class="bi bi-chevron-down"></i>
                       <i class="bi bi-chevron-up"></i>
                     </span>
                   </div>
-                  <ul id="categories-1-clothing-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
-                    <li><a href="#" class="subcategory-link">Men's Wear</a></li>
-                    <li><a href="#" class="subcategory-link">Women's Wear</a></li>
-                    <li><a href="#" class="subcategory-link">Kids' Clothing</a></li>
-                    <li><a href="#" class="subcategory-link">Accessories</a></li>
+                  <ul  th:id="${'categories-'+cat.getId()+'-clothing-subcategories'}" class="subcategory-list list-unstyled collapse ps-3 mt-2">
+                    <li><a th:href="@{/products/men/{catId}(catId=${cat.getId()})}" class="subcategory-link">Men's Wear</a></li>
+                    <li><a th:href="@{/products/women/{catId}(catId=${cat.getId()})}" class="subcategory-link">Women's Wear</a></li>
                   </ul>
                 </li>
 
-                <!-- Electronics Category -->
-                <li class="category-item">
-                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-electronics-subcategories" aria-expanded="false" aria-controls="categories-1-electronics-subcategories">
-                    <a href="javascript:void(0)" class="category-link">Electronics</a>
-                    <span class="category-toggle">
-                      <i class="bi bi-chevron-down"></i>
-                      <i class="bi bi-chevron-up"></i>
-                    </span>
-                  </div>
-                  <ul id="categories-1-electronics-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
-                    <li><a href="#" class="subcategory-link">Smartphones</a></li>
-                    <li><a href="#" class="subcategory-link">Laptops</a></li>
-                    <li><a href="#" class="subcategory-link">Tablets</a></li>
-                    <li><a href="#" class="subcategory-link">Accessories</a></li>
-                  </ul>
-                </li>
+<!--                &lt;!&ndash; Electronics Category &ndash;&gt;-->
+<!--                <li class="category-item">-->
+<!--                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-electronics-subcategories" aria-expanded="false" aria-controls="categories-1-electronics-subcategories">-->
+<!--                    <a href="javascript:void(0)" class="category-link">Electronics</a>-->
+<!--                    <span class="category-toggle">-->
+<!--                      <i class="bi bi-chevron-down"></i>-->
+<!--                      <i class="bi bi-chevron-up"></i>-->
+<!--                    </span>-->
+<!--                  </div>-->
+<!--                  <ul id="categories-1-electronics-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">-->
+<!--                    <li><a href="#" class="subcategory-link">Smartphones</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Laptops</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Tablets</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Accessories</a></li>-->
+<!--                  </ul>-->
+<!--                </li>-->
 
-                <!-- Home & Kitchen Category -->
-                <li class="category-item">
-                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-home-subcategories" aria-expanded="false" aria-controls="categories-1-home-subcategories">
-                    <a href="javascript:void(0)" class="category-link">Home &amp; Kitchen</a>
-                    <span class="category-toggle">
-                      <i class="bi bi-chevron-down"></i>
-                      <i class="bi bi-chevron-up"></i>
-                    </span>
-                  </div>
-                  <ul id="categories-1-home-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
-                    <li><a href="#" class="subcategory-link">Furniture</a></li>
-                    <li><a href="#" class="subcategory-link">Kitchen Appliances</a></li>
-                    <li><a href="#" class="subcategory-link">Home Decor</a></li>
-                    <li><a href="#" class="subcategory-link">Bedding</a></li>
-                  </ul>
-                </li>
+<!--                &lt;!&ndash; Home & Kitchen Category &ndash;&gt;-->
+<!--                <li class="category-item">-->
+<!--                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-home-subcategories" aria-expanded="false" aria-controls="categories-1-home-subcategories">-->
+<!--                    <a href="javascript:void(0)" class="category-link">Home &amp; Kitchen</a>-->
+<!--                    <span class="category-toggle">-->
+<!--                      <i class="bi bi-chevron-down"></i>-->
+<!--                      <i class="bi bi-chevron-up"></i>-->
+<!--                    </span>-->
+<!--                  </div>-->
+<!--                  <ul id="categories-1-home-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">-->
+<!--                    <li><a href="#" class="subcategory-link">Furniture</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Kitchen Appliances</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Home Decor</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Bedding</a></li>-->
+<!--                  </ul>-->
+<!--                </li>-->
 
-                <!-- Beauty & Personal Care Category -->
-                <li class="category-item">
-                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-beauty-subcategories" aria-expanded="false" aria-controls="categories-1-beauty-subcategories">
-                    <a href="javascript:void(0)" class="category-link">Beauty &amp; Personal Care</a>
-                    <span class="category-toggle">
-                      <i class="bi bi-chevron-down"></i>
-                      <i class="bi bi-chevron-up"></i>
-                    </span>
-                  </div>
-                  <ul id="categories-1-beauty-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
-                    <li><a href="#" class="subcategory-link">Skincare</a></li>
-                    <li><a href="#" class="subcategory-link">Makeup</a></li>
-                    <li><a href="#" class="subcategory-link">Hair Care</a></li>
-                    <li><a href="#" class="subcategory-link">Fragrances</a></li>
-                  </ul>
-                </li>
+<!--                &lt;!&ndash; Beauty & Personal Care Category &ndash;&gt;-->
+<!--                <li class="category-item">-->
+<!--                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-beauty-subcategories" aria-expanded="false" aria-controls="categories-1-beauty-subcategories">-->
+<!--                    <a href="javascript:void(0)" class="category-link">Beauty &amp; Personal Care</a>-->
+<!--                    <span class="category-toggle">-->
+<!--                      <i class="bi bi-chevron-down"></i>-->
+<!--                      <i class="bi bi-chevron-up"></i>-->
+<!--                    </span>-->
+<!--                  </div>-->
+<!--                  <ul id="categories-1-beauty-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">-->
+<!--                    <li><a href="#" class="subcategory-link">Skincare</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Makeup</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Hair Care</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Fragrances</a></li>-->
+<!--                  </ul>-->
+<!--                </li>-->
 
-                <!-- Sports & Outdoors Category -->
-                <li class="category-item">
-                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-sports-subcategories" aria-expanded="false" aria-controls="categories-1-sports-subcategories">
-                    <a href="javascript:void(0)" class="category-link">Sports &amp; Outdoors</a>
-                    <span class="category-toggle">
-                      <i class="bi bi-chevron-down"></i>
-                      <i class="bi bi-chevron-up"></i>
-                    </span>
-                  </div>
-                  <ul id="categories-1-sports-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
-                    <li><a href="#" class="subcategory-link">Fitness Equipment</a></li>
-                    <li><a href="#" class="subcategory-link">Outdoor Gear</a></li>
-                    <li><a href="#" class="subcategory-link">Sports Apparel</a></li>
-                    <li><a href="#" class="subcategory-link">Team Sports</a></li>
-                  </ul>
-                </li>
+<!--                &lt;!&ndash; Sports & Outdoors Category &ndash;&gt;-->
+<!--                <li class="category-item">-->
+<!--                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-sports-subcategories" aria-expanded="false" aria-controls="categories-1-sports-subcategories">-->
+<!--                    <a href="javascript:void(0)" class="category-link">Sports &amp; Outdoors</a>-->
+<!--                    <span class="category-toggle">-->
+<!--                      <i class="bi bi-chevron-down"></i>-->
+<!--                      <i class="bi bi-chevron-up"></i>-->
+<!--                    </span>-->
+<!--                  </div>-->
+<!--                  <ul id="categories-1-sports-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">-->
+<!--                    <li><a href="#" class="subcategory-link">Fitness Equipment</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Outdoor Gear</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Sports Apparel</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Team Sports</a></li>-->
+<!--                  </ul>-->
+<!--                </li>-->
 
-                <!-- Books Category (no subcategories) -->
-                <li class="category-item">
-                  <div class="d-flex justify-content-between align-items-center category-header">
-                    <a href="#" class="category-link">Books</a>
-                  </div>
-                </li>
+<!--                &lt;!&ndash; Books Category (no subcategories) &ndash;&gt;-->
+<!--                <li class="category-item">-->
+<!--                  <div class="d-flex justify-content-between align-items-center category-header">-->
+<!--                    <a href="#" class="category-link">Books</a>-->
+<!--                  </div>-->
+<!--                </li>-->
 
-                <!-- Toys & Games Category -->
-                <li class="category-item">
-                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-toys-subcategories" aria-expanded="false" aria-controls="categories-1-toys-subcategories">
-                    <a href="javascript:void(0)" class="category-link">Toys &amp; Games</a>
-                    <span class="category-toggle">
-                      <i class="bi bi-chevron-down"></i>
-                      <i class="bi bi-chevron-up"></i>
-                    </span>
-                  </div>
-                  <ul id="categories-1-toys-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
-                    <li><a href="#" class="subcategory-link">Board Games</a></li>
-                    <li><a href="#" class="subcategory-link">Puzzles</a></li>
-                    <li><a href="#" class="subcategory-link">Action Figures</a></li>
-                    <li><a href="#" class="subcategory-link">Educational Toys</a></li>
-                  </ul>
-                </li>
+<!--                &lt;!&ndash; Toys & Games Category &ndash;&gt;-->
+<!--                <li class="category-item">-->
+<!--                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-toys-subcategories" aria-expanded="false" aria-controls="categories-1-toys-subcategories">-->
+<!--                    <a href="javascript:void(0)" class="category-link">Toys &amp; Games</a>-->
+<!--                    <span class="category-toggle">-->
+<!--                      <i class="bi bi-chevron-down"></i>-->
+<!--                      <i class="bi bi-chevron-up"></i>-->
+<!--                    </span>-->
+<!--                  </div>-->
+<!--                  <ul id="categories-1-toys-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">-->
+<!--                    <li><a href="#" class="subcategory-link">Board Games</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Puzzles</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Action Figures</a></li>-->
+<!--                    <li><a href="#" class="subcategory-link">Educational Toys</a></li>-->
+<!--                  </ul>-->
+<!--                </li>-->
               </ul>
 
             </div><!--/Product Categories Widget -->
@@ -931,233 +929,40 @@
 
               <div class="price-range-container">
                 <div class="current-range mb-3">
-                  <span class="min-price">$0</span>
-                  <span class="max-price float-end">$1000</span>
+                  <span class="min-price">0 XAF</span>
+                  <span class="max-price float-end">1000 XAF</span>
                 </div>
 
                 <div class="range-slider">
                   <div class="slider-track"></div>
                   <div class="slider-progress"></div>
-                  <input type="range" class="min-range" min="0" max="1000" value="0" step="10">
-                  <input type="range" class="max-range" min="0" max="1000" value="500" step="10">
+                  <input type="range" class="min-range" min="0" max="100000" value="0" step="100">
+                  <input type="range" class="max-range" min="0" max="100000" value="500" step="100">
                 </div>
 
-                <div class="price-inputs mt-3">
+                <form class="price-inputs mt-3" th:action="@{/product/price/range}" method="post">
                   <div class="row g-2">
                     <div class="col-6">
                       <div class="input-group input-group-sm">
-                        <span class="input-group-text">$</span>
-                        <input type="number" class="form-control min-price-input" placeholder="Min" min="0" max="1000" value="0" step="10">
+                        <span class="input-group-text">XAF</span>
+                        <input type="number" class="form-control min-price-input" name="minPrice" placeholder="Min" min="0" max="100000" value="0" step="500">
                       </div>
                     </div>
                     <div class="col-6">
                       <div class="input-group input-group-sm">
-                        <span class="input-group-text">$</span>
-                        <input type="number" class="form-control max-price-input" placeholder="Max" min="0" max="1000" value="500" step="10">
+                        <span class="input-group-text">XAF</span>
+                        <input type="number" class="form-control max-price-input" name="maxPrice" placeholder="Max" min="0" max="1000000" value="100" step="100">
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div class="filter-actions mt-3">
-                  <button type="button" class="btn btn-sm btn-primary w-100">Apply Filter</button>
-                </div>
+                  <div class="filter-actions mt-3">
+                    <button type="submit" class="btn btn-sm btn-primary w-100">Apply Filter</button>
+                  </div>
+                </form>
               </div>
 
             </div><!--/Pricing Range Widget -->
-
-            <!-- Brand Filter Widget -->
-            <h3 class="brand-filter-widget widget-item">Filter by Brand</h3><!--/Brand Filter Widget -->
-
-            <!-- Color Filter Widget -->
-            <div class="color-filter-widget widget-item">
-
-              <h3 class="widget-title">Filter by Color</h3>
-
-              <div class="color-filter-content">
-                <div class="color-options">
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="black" id="color-black">
-                    <label class="form-check-label" for="color-black">
-                      <span class="color-swatch" style="background-color: #000000;" title="Black"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="white" id="color-white">
-                    <label class="form-check-label" for="color-white">
-                      <span class="color-swatch" style="background-color: #ffffff;" title="White"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="red" id="color-red">
-                    <label class="form-check-label" for="color-red">
-                      <span class="color-swatch" style="background-color: #e74c3c;" title="Red"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="blue" id="color-blue">
-                    <label class="form-check-label" for="color-blue">
-                      <span class="color-swatch" style="background-color: #3498db;" title="Blue"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="green" id="color-green">
-                    <label class="form-check-label" for="color-green">
-                      <span class="color-swatch" style="background-color: #2ecc71;" title="Green"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="yellow" id="color-yellow">
-                    <label class="form-check-label" for="color-yellow">
-                      <span class="color-swatch" style="background-color: #f1c40f;" title="Yellow"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="purple" id="color-purple">
-                    <label class="form-check-label" for="color-purple">
-                      <span class="color-swatch" style="background-color: #9b59b6;" title="Purple"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="orange" id="color-orange">
-                    <label class="form-check-label" for="color-orange">
-                      <span class="color-swatch" style="background-color: #e67e22;" title="Orange"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="pink" id="color-pink">
-                    <label class="form-check-label" for="color-pink">
-                      <span class="color-swatch" style="background-color: #fd79a8;" title="Pink"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="brown" id="color-brown">
-                    <label class="form-check-label" for="color-brown">
-                      <span class="color-swatch" style="background-color: #795548;" title="Brown"></span>
-                    </label>
-                  </div>
-                </div>
-
-                <div class="filter-actions mt-3">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Clear All</button>
-                  <button type="button" class="btn btn-sm btn-primary">Apply Filter</button>
-                </div>
-              </div>
-
-            </div><!--/Color Filter Widget -->
-
-            <!-- Brand Filter Widget -->
-            <div class="brand-filter-widget widget-item">
-
-              <h3 class="widget-title">Filter by Brand</h3>
-
-              <div class="brand-filter-content">
-                <div class="brand-search">
-                  <input type="text" class="form-control" placeholder="Search brands...">
-                  <i class="bi bi-search"></i>
-                </div>
-
-                <div class="brand-list">
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand1">
-                      <label class="form-check-label" for="brand1">
-                        Nike
-                        <span class="brand-count">(24)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand2">
-                      <label class="form-check-label" for="brand2">
-                        Adidas
-                        <span class="brand-count">(18)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand3">
-                      <label class="form-check-label" for="brand3">
-                        Puma
-                        <span class="brand-count">(12)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand4">
-                      <label class="form-check-label" for="brand4">
-                        Reebok
-                        <span class="brand-count">(9)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand5">
-                      <label class="form-check-label" for="brand5">
-                        Under Armour
-                        <span class="brand-count">(7)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand6">
-                      <label class="form-check-label" for="brand6">
-                        New Balance
-                        <span class="brand-count">(6)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand7">
-                      <label class="form-check-label" for="brand7">
-                        Converse
-                        <span class="brand-count">(5)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand8">
-                      <label class="form-check-label" for="brand8">
-                        Vans
-                        <span class="brand-count">(4)</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="brand-actions">
-                  <button class="btn btn-sm btn-outline-primary">Apply Filter</button>
-                  <button class="btn btn-sm btn-link">Clear All</button>
-                </div>
-              </div>
-
-            </div><!--/Brand Filter Widget -->
-
           </div>
-
         </div>
 
         <div class="col-lg-8">
@@ -1170,40 +975,25 @@
               <!-- Filter and Sort Options -->
               <div class="filter-container mb-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="row g-3">
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div class="filter-item search-form">
+                  <div class="col-12 col-md-6">
+                    <form class="filter-item search-form" th:action="@{/productSearch}" method="post">
                       <label for="productSearch" class="form-label">Search Products</label>
                       <div class="input-group">
-                        <input type="text" class="form-control" id="productSearch" placeholder="Search for products..." aria-label="Search for products">
-                        <button class="btn search-btn" type="button">
+                        <input type="text" class="form-control" id="productSearch" name="keyword" placeholder="Search for products by name or brand..." aria-label="Search for products">
+                        <button class="btn search-btn" type="submit">
                           <i class="bi bi-search"></i>
                         </button>
                       </div>
-                    </div>
-                  </div>
-
-                  <div class="col-12 col-md-6 col-lg-2">
-                    <div class="filter-item">
-                      <label for="priceRange" class="form-label">Price Range</label>
-                      <select class="form-select" id="priceRange">
-                        <option selected="">All Prices</option>
-                        <option>Under $25</option>
-                        <option>$25 to $50</option>
-                        <option>$50 to $100</option>
-                        <option>$100 to $200</option>
-                        <option>$200 &amp; Above</option>
-                      </select>
-                    </div>
+                    </form>
                   </div>
 
                   <div class="col-12 col-md-6 col-lg-2">
                     <div class="filter-item">
                       <label for="sortBy" class="form-label">Sort By</label>
                       <select class="form-select" id="sortBy">
-                        <option selected="">Featured</option>
-                        <option>Price: Low to High</option>
-                        <option>Price: High to Low</option>
-                        <option>Customer Rating</option>
+                        <option selected="">--Sorting Criteria--</option>
+                        <option value="low high">Price: Low to High</option>
+                        <option value="high low">Price: High to Low</option>
                         <option>Newest Arrivals</option>
                       </select>
                     </div>
@@ -1233,28 +1023,8 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="row mt-3">
-                  <div class="col-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="active-filters">
-                      <span class="active-filter-label">Active Filters:</span>
-                      <div class="filter-tags">
-                        <span class="filter-tag">
-                          Electronics <button class="filter-remove"><i class="bi bi-x"></i></button>
-                        </span>
-                        <span class="filter-tag">
-                          $50 to $100 <button class="filter-remove"><i class="bi bi-x"></i></button>
-                        </span>
-                        <button class="clear-all-btn">Clear All</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
               </div>
-
             </div>
-
           </section><!-- /Category Header Section -->
 
           <!-- Category Product List Section -->
@@ -1264,305 +1034,56 @@
 
               <div class="row gy-4">
                 <!-- Product 1 -->
-                <div class="col-lg-6">
+                <div th:each="prod, iterStat: ${products}" th:if="${!products.isEmpty()}" class="col-lg-6 given-product">
                   <div class="product-box">
                     <div class="product-thumb">
-                      <span class="product-label">New Season</span>
-                      <img src="assets/img/product/product-3.webp" alt="Product Image" class="main-img" loading="lazy">
+                      <span class="product-label" th:class="${prod.quantity>prod.minQuantity ? 'sale-badge':'out-of-stock-badge'}" th:text="${prod.quantity>prod.minQuantity ? 'Sale':'Out of stock'}">New Season</span>
+                      <img th:src="${prod.imageUrl}" alt="Product Image" class="main-img" loading="lazy">
                       <div class="product-overlay">
                         <div class="product-quick-actions">
                           <button type="button" class="quick-action-btn">
-                            <i class="bi bi-heart"></i>
-                          </button>
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-arrow-repeat"></i>
-                          </button>
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-eye"></i>
+                            <a th:href="@{/user/product-details}"><i class="bi bi-eye"></i></a>
                           </button>
                         </div>
                         <div class="add-to-cart-container">
-                          <button type="button" class="add-to-cart-btn">Add to Cart</button>
+                          <button th:if="${prod.quantity>prod.minQuantity}" class="add-to-cart-btn" style="color: white" ><a th:href="@{/addtoCart/{prodId}(prodId=${prod.getId()})/{client}(client=${client.getId()})}">Add to Cart</a></button>
+                          <button th:unless="${prod.quantity>prod.minQuantity}" class="add-to-cart-btn disabled">Sold out</button>
                         </div>
                       </div>
                     </div>
+
                     <div class="product-content">
                       <div class="product-details">
-                        <h3 class="product-title"><a href="product-details.html">Vestibulum ante ipsum primis</a></h3>
-                        <div class="product-price">
-                          <span>$149.99</span>
+                        <h3 class="product-title text-center" ><a th:href="@{/user/product-details}" th:text="${prod.getName().toUpperCase()}">Vestibulum ante ipsum primis</a></h3>
+                        <div class="row d-flex justify-content-between align-items-center p-2">
+                          <div  style="width: max-content" th:text="${prod.category.getName().substring(0,1).toUpperCase()+prod.category.getName().substring(1).toLowerCase()}"></div>
+                          <div class="fst-italic" style="width: max-content">Size: <span th:text="${prod.size}"></span></div>
                         </div>
                       </div>
-                      <div class="product-rating-container">
-                        <div class="rating-stars">
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star"></i>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="product-rating-container fw-light text-muted d-flex align-items-center fw-semibold">
+                          <div class="rating-stars" th:if="${prod.getType().toLowerCase() == 'men'}" >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="me-1" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10 21v-6H9q-.425 0-.712-.288T8 14V9q0-.825.588-1.412T10 7h4q.825 0 1.413.588T16 9v5q0 .425-.288.713T15 15h-1v6q0 .425-.288.713T13 22h-2q-.425 0-.712-.288T10 21m2-15q-.825 0-1.412-.587T10 4t.588-1.412T12 2t1.413.588T14 4t-.587 1.413T12 6"/></svg><span>Men's wear</span>
+                          </div>
+                          <div class="rating-stars " th:if="${prod.getType().toLowerCase() == 'women'}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="me-1"  width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10 21v-5H8.475q-.525 0-.825-.437t-.1-.938l2.5-6.325q.25-.6.775-.95T12 7t1.175.35t.775.95l2.5 6.325q.2.5-.1.938t-.825.437H14v5q0 .425-.288.713T13 22h-2q-.425 0-.712-.288T10 21m2-15q-.825 0-1.412-.587T10 4t.588-1.412T12 2t1.413.588T14 4t-.587 1.413T12 6"/></svg><span>Women's wear</span>
+                          </div>
+                          <div class="rating-stars" th:if="${prod.getType().toLowerCase() == 'mixed'}">
+                            <span>Mixed</span>
+                          </div>
                         </div>
-                        <span class="rating-number">4.0</span>
+                        <span class="price-value product-price" th:text="${prod.sellPrice + ' XAF'}">$149.99</span>
                       </div>
-                      <div class="product-color-options">
-                        <span class="color-option" style="background-color: #3b82f6;"></span>
-                        <span class="color-option" style="background-color: #22c55e;"></span>
-                        <span class="color-option active" style="background-color: #f97316;"></span>
-                      </div>
+                      <div th:text="${prod.creationTime}" class="d-none"></div>
                     </div>
                   </div>
                 </div>
                 <!-- End Product 1 -->
 
-                <!-- Product 2 -->
-                <div class="col-lg-6">
-                  <div class="product-box">
-                    <div class="product-thumb">
-                      <span class="product-label product-label-sale">-30%</span>
-                      <img src="assets/img/product/product-6.webp" alt="Product Image" class="main-img" loading="lazy">
-                      <div class="product-overlay">
-                        <div class="product-quick-actions">
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-heart"></i>
-                          </button>
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-arrow-repeat"></i>
-                          </button>
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-eye"></i>
-                          </button>
-                        </div>
-                        <div class="add-to-cart-container">
-                          <button type="button" class="add-to-cart-btn">Add to Cart</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="product-content">
-                      <div class="product-details">
-                        <h3 class="product-title"><a href="product-details.html">Aliquam tincidunt mauris eu risus</a></h3>
-                        <div class="product-price">
-                          <span class="original">$199.99</span>
-                          <span class="sale">$139.99</span>
-                        </div>
-                      </div>
-                      <div class="product-rating-container">
-                        <div class="rating-stars">
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-half"></i>
-                        </div>
-                        <span class="rating-number">4.5</span>
-                      </div>
-                      <div class="product-color-options">
-                        <span class="color-option" style="background-color: #0ea5e9;"></span>
-                        <span class="color-option active" style="background-color: #111827;"></span>
-                        <span class="color-option" style="background-color: #a855f7;"></span>
-                      </div>
-                    </div>
-                  </div>
+                <div th:if="${products.isEmpty()}">
+                  <p>No products found matching your criteria</p>
                 </div>
-                <!-- End Product 2 -->
-
-                <!-- Product 3 -->
-                <div class="col-lg-6">
-                  <div class="product-box">
-                    <div class="product-thumb">
-                      <img src="assets/img/product/product-9.webp" alt="Product Image" class="main-img" loading="lazy">
-                      <div class="product-overlay">
-                        <div class="product-quick-actions">
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-heart"></i>
-                          </button>
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-arrow-repeat"></i>
-                          </button>
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-eye"></i>
-                          </button>
-                        </div>
-                        <div class="add-to-cart-container">
-                          <button type="button" class="add-to-cart-btn">Add to Cart</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="product-content">
-                      <div class="product-details">
-                        <h3 class="product-title"><a href="product-details.html">Cras ornare tristique elit</a></h3>
-                        <div class="product-price">
-                          <span>$89.50</span>
-                        </div>
-                      </div>
-                      <div class="product-rating-container">
-                        <div class="rating-stars">
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star"></i>
-                          <i class="bi bi-star"></i>
-                        </div>
-                        <span class="rating-number">3.0</span>
-                      </div>
-                      <div class="product-color-options">
-                        <span class="color-option active" style="background-color: #ef4444;"></span>
-                        <span class="color-option" style="background-color: #64748b;"></span>
-                        <span class="color-option" style="background-color: #eab308;"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- End Product 3 -->
-
-                <!-- Product 4 -->
-                <div class="col-lg-6">
-                  <div class="product-box">
-                    <div class="product-thumb">
-                      <img src="assets/img/product/product-11.webp" alt="Product Image" class="main-img" loading="lazy">
-                      <div class="product-overlay">
-                        <div class="product-quick-actions">
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-heart"></i>
-                          </button>
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-arrow-repeat"></i>
-                          </button>
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-eye"></i>
-                          </button>
-                        </div>
-                        <div class="add-to-cart-container">
-                          <button type="button" class="add-to-cart-btn">Add to Cart</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="product-content">
-                      <div class="product-details">
-                        <h3 class="product-title"><a href="product-details.html">Integer vitae libero ac risus</a></h3>
-                        <div class="product-price">
-                          <span>$119.00</span>
-                        </div>
-                      </div>
-                      <div class="product-rating-container">
-                        <div class="rating-stars">
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                        </div>
-                        <span class="rating-number">5.0</span>
-                      </div>
-                      <div class="product-color-options">
-                        <span class="color-option" style="background-color: #10b981;"></span>
-                        <span class="color-option active" style="background-color: #8b5cf6;"></span>
-                        <span class="color-option" style="background-color: #ec4899;"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- End Product 4 -->
-
-                <!-- Product 5 -->
-                <div class="col-lg-6">
-                  <div class="product-box">
-                    <div class="product-thumb">
-                      <span class="product-label product-label-sold">Sold Out</span>
-                      <img src="assets/img/product/product-2.webp" alt="Product Image" class="main-img" loading="lazy">
-                      <div class="product-overlay">
-                        <div class="product-quick-actions">
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-heart"></i>
-                          </button>
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-arrow-repeat"></i>
-                          </button>
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-eye"></i>
-                          </button>
-                        </div>
-                        <div class="add-to-cart-container">
-                          <button type="button" class="add-to-cart-btn disabled">Sold Out</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="product-content">
-                      <div class="product-details">
-                        <h3 class="product-title"><a href="product-details.html">Donec eu libero sit amet quam</a></h3>
-                        <div class="product-price">
-                          <span>$75.00</span>
-                        </div>
-                      </div>
-                      <div class="product-rating-container">
-                        <div class="rating-stars">
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-half"></i>
-                        </div>
-                        <span class="rating-number">4.7</span>
-                      </div>
-                      <div class="product-color-options">
-                        <span class="color-option active" style="background-color: #4b5563;"></span>
-                        <span class="color-option" style="background-color: #e11d48;"></span>
-                        <span class="color-option" style="background-color: #4f46e5;"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- End Product 5 -->
-
-                <!-- Product 6 -->
-                <div class="col-lg-6">
-                  <div class="product-box">
-                    <div class="product-thumb">
-                      <span class="product-label product-label-hot">Hot</span>
-                      <img src="assets/img/product/product-12.webp" alt="Product Image" class="main-img" loading="lazy">
-                      <div class="product-overlay">
-                        <div class="product-quick-actions">
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-heart"></i>
-                          </button>
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-arrow-repeat"></i>
-                          </button>
-                          <button type="button" class="quick-action-btn">
-                            <i class="bi bi-eye"></i>
-                          </button>
-                        </div>
-                        <div class="add-to-cart-container">
-                          <button type="button" class="add-to-cart-btn">Add to Cart</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="product-content">
-                      <div class="product-details">
-                        <h3 class="product-title"><a href="product-details.html">Pellentesque habitant morbi tristique</a></h3>
-                        <div class="product-price">
-                          <span>$64.95</span>
-                        </div>
-                      </div>
-                      <div class="product-rating-container">
-                        <div class="rating-stars">
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-half"></i>
-                          <i class="bi bi-star"></i>
-                        </div>
-                        <span class="rating-number">3.6</span>
-                      </div>
-                      <div class="product-color-options">
-                        <span class="color-option" style="background-color: #eab308;"></span>
-                        <span class="color-option" style="background-color: #14b8a6;"></span>
-                        <span class="color-option active" style="background-color: #facc15;"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- End Product 6 -->
               </div>
-
             </div>
 
           </section><!-- /Category Product List Section -->
@@ -1601,11 +1122,10 @@
           </section><!-- /Category Pagination Section -->
 
         </div>
-
       </div>
     </div>
-
   </main>
+
 
   <footer id="footer" class="footer">
     <div class="footer-newsletter">
@@ -1614,7 +1134,7 @@
           <div class="col-lg-8 text-center">
             <h2>Join Our Newsletter</h2>
             <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
-            <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <form action="/forms/newsletter.php" method="post" class="php-email-form">
               <div class="newsletter-form d-flex">
                 <input type="email" name="email" placeholder="Your email address" required="">
                 <button type="submit">Subscribe</button>
@@ -1772,18 +1292,25 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/drift-zoom/Drift.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/drift-zoom/Drift.min.js"></script>
+  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
+<script>
+  let products = document.querySelectorAll(".given-product")
+  let searchBrand = document.querySelector("#searchBrand")
+
+  searchBrand.addEventListener("change", ()=> {
+
+  })
+</script>
 
 </body>
 

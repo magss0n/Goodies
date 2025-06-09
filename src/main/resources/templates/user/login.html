@@ -114,15 +114,6 @@
              <img src="/assets/img/gooLogo.svg" alt="Goodies Logo">
           </a>
 
-          <!-- Search -->
-          <form class="search-form desktop-search-form">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for products">
-              <button class="btn" type="submit">
-                <i class="bi bi-search"></i>
-              </button>
-            </div>
-          </form>
 
           <!-- Actions -->
           <div class="header-actions d-flex align-items-center justify-content-end">
@@ -161,8 +152,8 @@
                   </a>
                 </div>
                 <div class="dropdown-footer">
-                  <a href="login.html" class="btn btn-primary w-100 mb-2">Sign In</a>
-                  <a href="login.html" class="btn btn-outline-primary w-100">Register</a>
+                  <a th:href="@{/login}" class="btn btn-primary w-100 mb-2">Sign In</a>
+                  <a th:href="@{/signup}" class="btn btn-outline-primary w-100">Register</a>
                 </div>
               </div>
             </div>
@@ -805,12 +796,14 @@
         <h1 class="mb-2 mb-lg-0">Login</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a th:href="@{/user/home}">Home</a></li>
             <li class="current">Login</li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
+
+    <div th:text="${message}" class="text-center fst-italic mt-5"></div>
 
     <!-- Login Register Section -->
     <section id="login-register" class="login-register section">

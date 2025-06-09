@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -28,10 +28,6 @@
     <link rel="stylesheet" href="/assets-admin/css/style.css">
 </head>
 <body>
-<div id="global-loader">
-    <div class="whirly-loader"></div>
-</div>
-
 <div class="main-wrapper">
 
     <div th:replace="~{/fragments/adminFrag :: header(${admin.getName().substring(0,1).toUpperCase() + admin.getName().substring(1).toLowerCase()})}"></div>
@@ -46,10 +42,9 @@
                     <h6>Manage your purchases</h6>
                 </div>
                 <div class="page-btn">
-                    <a href="javascript:void(0);" class="btn btn-added"
-                       onclick="document.getElementById('purchaseModal').style.display='block'">
+                    <button type="button" class="btn btn-added" data-bs-target="#purchaseModal" data-bs-toggle="modal">
                         <img src="/assets-admin/img/icons/plus.svg" alt="img">Add New Purchases
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -137,354 +132,28 @@
                         <table class="table datanew">
                             <thead>
                             <tr>
-                                <th>
-                                    <label class="checkboxs">
-                                        <input type="checkbox" id="select-all">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </th>
+                                <th>Ref</th>
                                 <th>Supplier Name</th>
-                                <th>Reference</th>
-                                <th>Date</th>
-                                <th>Status</th>
+                                <th>Product Name</th>
+                                <th>Cost Price</th>
+                                <th>Qty bought</th>
                                 <th>Grand Total</th>
-                                <th>Paid</th>
-                                <th>Due</th>
-                                <th>Payment Status</th>
+                                <th>Purchase Date</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">Apex Computers</td>
-                                <td>PT001</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightgreen">Received</span></td>
-                                <td>550</td>
-                                <td>120</td>
-                                <td>550</td>
-                                <td><span class="badges bg-lightgreen">Paid</span></td>
+                                <tr th:each="purchase: ${purchases}">
+                                    <td th:text="${purchase.getId()}"></td>
+                                    <td class="text-bolds" th:text="${purchase.getSupplier().getName().substring(0,1).toUpperCase() + purchase.getSupplier().getName().substring(1).toLowerCase()}">Apex Computers</td>
+                                    <td th:text="${purchase.getProduct().getName().substring(0,1).toUpperCase() + purchase.getProduct().getName().substring(1).toLowerCase()}">PT001</td>
+                                    <td th:text="${purchase.getProduct().getCostPrice()} + ' XAF'">19 Nov 2022</td>
+                                    <td th:text="${purchase.getQty()}"></td>
+                                    <td th:text="${purchase.getQty()*purchase.getProduct().getCostPrice() +' XAF'}">550</td>
+                                    <td th:text="${purchase.getDateTime().toString().split('T')[0] + ' at ' + purchase.getDateTime().toString().split('T')[1]}">120</td>
                                 <td>
                                     <a href="javascript:void(0);" class="me-3"
                                        onclick="document.getElementById('editPurchaseModal').style.display='block'">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">Modern Automobile</td>
-                                <td>PT002</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightgreen">Received</span></td>
-                                <td>410</td>
-                                <td>410</td>
-                                <td>410</td>
-                                <td><span class="badges bg-lightgreen">Paid</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">AIM Infotech</td>
-                                <td>PT003</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightred">Pending</span></td>
-                                <td>210</td>
-                                <td>120</td>
-                                <td>210</td>
-                                <td><span class="badges bg-lightred">Unpaid</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">Best Power Tools</td>
-                                <td>PT004</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightgreen">Received</span></td>
-                                <td>210</td>
-                                <td>120</td>
-                                <td>210</td>
-                                <td><span class="badges bg-lightred">Unpaid</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">Best Power Tools</td>
-                                <td>PT005</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightred">Pending</span></td>
-                                <td>210</td>
-                                <td>120</td>
-                                <td>210</td>
-                                <td><span class="badges bg-lightred">UnPaid</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">Best Power Tools</td>
-                                <td>PT006</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightgreen">Received</span></td>
-                                <td>210</td>
-                                <td>120</td>
-                                <td>210</td>
-                                <td><span class="badges bg-lightgreen">paid</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">Apex Computers</td>
-                                <td>PT007</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightyellow">Ordered</span></td>
-                                <td>1000</td>
-                                <td>500</td>
-                                <td>1000</td>
-                                <td><span class="badges bg-lightyellow">Partial</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">Apex Computers</td>
-                                <td>PT008</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightgreen">Received</span></td>
-                                <td>550</td>
-                                <td>120</td>
-                                <td>550</td>
-                                <td><span class="badges bg-lightgreen">Paid</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">Modern Automobile</td>
-                                <td>PT009</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightgreen">Received</span></td>
-                                <td>410</td>
-                                <td>410</td>
-                                <td>410</td>
-                                <td><span class="badges bg-lightgreen">Paid</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">AIM Infotech</td>
-                                <td>PT010</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightred">Pending</span></td>
-                                <td>210</td>
-                                <td>120</td>
-                                <td>210</td>
-                                <td><span class="badges bg-lightred">Unpaid</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">Best Power Tools</td>
-                                <td>PT011</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightgreen">Received</span></td>
-                                <td>210</td>
-                                <td>120</td>
-                                <td>210</td>
-                                <td><span class="badges bg-lightred">Unpaid</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">Best Power Tools</td>
-                                <td>PT012</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightred">Pending</span></td>
-                                <td>210</td>
-                                <td>120</td>
-                                <td>210</td>
-                                <td><span class="badges bg-lightred">UnPaid</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">Best Power Tools</td>
-                                <td>PT013</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightgreen">Received</span></td>
-                                <td>210</td>
-                                <td>120</td>
-                                <td>210</td>
-                                <td><span class="badges bg-lightgreen">paid</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
-                                        <img src="/assets-admin/img/icons/edit.svg" alt="img">
-                                    </a>
-                                    <a class="me-3 confirm-text" href="javascript:void(0);">
-                                        <img src="/assets-admin/img/icons/delete.svg" alt="img">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </td>
-                                <td class="text-bolds">Apex Computers</td>
-                                <td>PT014</td>
-                                <td>19 Nov 2022</td>
-                                <td><span class="badges bg-lightyellow">Ordered</span></td>
-                                <td>1000</td>
-                                <td>500</td>
-                                <td>1000</td>
-                                <td><span class="badges bg-lightyellow">Partial</span></td>
-                                <td>
-                                    <a class="me-3" href="editpurchase.html">
                                         <img src="/assets-admin/img/icons/edit.svg" alt="img">
                                     </a>
                                     <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -504,84 +173,81 @@
 
 
 <!-- Add Purchase Modal -->
-<div id="purchaseModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2>Add New Purchase</h2>
-            <span class="close" onclick="document.getElementById('purchaseModal').style.display='none'">&times;</span>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-lg-3 col-12">
-                    <div class="form-group">
-                        <label>Supplier Name</label>
-                        <div class="row">
-                            <div class="col-lg-10">
-                                <select class="select">
-                                    <option>Select</option>
-                                    <option>Supplier</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-2 ps-0">
-                                <div class="add-icon">
-                                    <a href="javascript:void(0);"><img src="/assets-admin/img/icons/plus1.svg" alt="img"></a>
+<div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="addPurchaseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addProductModalLabel">Add New Purchase</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" >X</button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="addPurchaseForm" method="post" th:action="@{/admin/addpurchase}" th:object="${newPurchase}">
+                            <div class="row">
+                                <div class="col-lg-3 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="prodName">Product</label>
+                                        <select id="prodName" class="form-control" name="productId">
+                                            <option selected value="">--Select Product--</option>
+                                            <option th:each="product: ${products}" th:value="${product.getId()}" th:text="${product.getName().split(' ')[0].toUpperCase()}"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-12" >
+                                    <div class="form-group">
+                                        <label for="purchaseDate">Purchase Date</label>
+                                        <input type="datetime-local" class="form-control" th:max="${#temporals.formatISO(localDateTime)}"  id="purchaseDate" required th:field="*{dateTime}" name="purchaseDate">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Quantity</label>
+                                        <input type="number" min="1" class="form-control" id="" th:field="*{qty}" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label>Reason <span class="fst-italic">(optional)</span></label>
+                                        <textarea class="form-control" th:field="*{reason}"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-12 d-flex align-items-center gap-3" id="supplier">
+                                    <div class="form-group" >
+                                        <label for="supp">Supplier</label>
+                                        <select class="form-control" id="supp" name="supplierId" required>
+                                            <option value="" selected>--Choose Supplier--</option>
+                                            <option th:if="${suppliers != null}" th:each="supplier: ${suppliers}" th:value="${supplier.getId()}" th:text="${supplier.getName()}"></option>
+                                        </select>
+                                    </div>
+<!--                                    <button class="btn btn-primary text-white" type="button" id="createSupp">Create Supplier</button>-->
+                                    <div class="col-lg-2 ps-0" id="createSupp">
+                                        <div class="add-icon">
+                                            <a href="javascript:void(0);"><img src="/assets-admin/img/icons/plus1.svg"  alt="img"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-sm-6 col-12" id="supplierName" hidden>
+                                    <div class="form-group d-inline mx-2">
+                                        <label>Supplier Name</label>
+                                        <input type="text" minlength="1" class="form-control" name="supplierName" required>
+                                    </div>
+                                    <div class="form-group d-inline mx-2">
+                                        <label>Supplier Phone</label>
+                                        <input type="number" min="600000000" max="699999999" name="supplierPhone" class="form-control" required>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-12">
-                    <div class="form-group">
-                        <label>Purchase Date</label>
-                        <div class="input-groupicon">
-                            <input type="text" placeholder="DD-MM-YYYY" class="datetimepicker">
-                            <div class="addonset">
-                                <img src="/assets-admin/img/icons/calendars.svg" alt="img">
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" onclick="console.log('SOUMETSSS')" onsubmit="console.log('nooooooonn')" class="btn btn-submit" id="save-btn">Save</button>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                </div>
-                <div class="col-lg-3 col-12">
-                    <div class="form-group">
-                        <label>Reference No.</label>
-                        <input type="text">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-12">
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select class="select">
-                            <option>Choose Status</option>
-                            <option>Completed</option>
-                            <option>Inprogress</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-12">
-                    <div class="form-group">
-                        <label>Product Name</label>
-                        <div class="input-groupicon">
-                            <input type="text" placeholder="Scan/Search Product by code and select...">
-                            <div class="addonset">
-                                <img src="/assets-admin/img/icons/scanners.svg" alt="img">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-12">
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea class="form-control"></textarea>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <a href="javascript:void(0);" class="btn btn-submit"
-                       onclick="document.getElementById('purchaseModal').style.display='none'">Submit</a>
-                    <a href="javascript:void(0);" class="btn btn-cancel"
-                       onclick="document.getElementById('purchaseModal').style.display='none'">Cancel</a>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
@@ -801,5 +467,34 @@
 <script src="/assets-admin/plugins/sweetalert/sweetalerts.min.js"></script>
 
 <script src="/assets-admin/js/script.js"></script>
+<script>
+    let saveBtn = document.querySelector("#save-btn")
+    let createSupplier = document.querySelector("#createSupp")
+    let productForm = document.querySelector("form")
+    let supplierSelect = document.querySelector("#supp")
+
+
+    supplierSelect.addEventListener("input", () => {
+        document.querySelector("#supplierName").hidden = true
+        document.getElementsByName("supplierName")[0].required = false
+        document.getElementsByName("supplierPhone")[0].required = false
+        document.querySelector("#supp").required = true
+    })
+
+    createSupplier.addEventListener("click", () => {
+        document.querySelector("#supplierName").hidden = false
+        document.querySelector("#createSupp").hidden = true
+        document.querySelector("#supp").required = false
+    })
+
+    let purchaseDate = document.querySelector("#purchaseDate")
+    purchaseDate.addEventListener("input", () => {
+        let date = new Date(purchaseDate.value)
+        saveBtn.disabled = date > Date.now();
+        this.style.borderColor = saveBtn.disabled ? 'red' : 'rgb(10, 77, 184)'
+    })
+
+</script>
+
 </body>
 </html>

@@ -12,9 +12,13 @@ import lombok.NoArgsConstructor;
 public class CartProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long productId;
-    private String productName;
-    private Double unitPrice;
+    private Long id;
+
+    @ManyToOne
+    private Product product;
+
     private Integer selectedQty;
-    private Double total;
+
+    @ManyToOne
+    private Order order;
 }

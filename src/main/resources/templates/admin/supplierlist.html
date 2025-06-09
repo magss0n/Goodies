@@ -42,8 +42,7 @@
                     <h6>Manage your Supplier</h6>
                 </div>
                 <div class="page-btn">
-                    <a href="addsupplier.html" class="btn btn-added"><img src="/assets-admin/img/icons/plus.svg" alt="img">Add
-                        Supplier</a>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#addSupplier"  class="btn btn-added"><img src="/assets-admin/img/icons/plus.svg" alt="img">Add Supplier</button>
                 </div>
             </div>
 
@@ -332,17 +331,14 @@
 </div>
 
 <!--Add supplier modal-->
-<form class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="addCategoryModalLabel" aria-hidden="true" th:action="@{/admin/addSupplier}" method="post" th:object="${newSupplier}">
+<div class="modal fade" id="addSupplier" tabindex="-1" aria-labelledby="addSupplierModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
+        <form class="modal-content" th:action="@{/admin/addSupplier}" method="post" th:object="${newSupplier}">
             <div class="modal-header">
-                <div class="page-title">
-                    <h4>Add Supplier</h4>
-                    <h6>Create new product supplier</h6>
-                </div>
+                <h5 class="modal-title" id="addProductModalLabel">Add New Supplier</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" >
                 <div class="card">
                     <div class="card-body">
                         <div id="addCategoryForm">
@@ -368,9 +364,9 @@
                 <button type="submit" class="btn btn-submit me-2">Submit</button>
                 <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
             </div>
-        </div>
+        </form>
     </div>
-</form>
+</div>
 
 
 <script src="/assets-admin/js/jquery-3.6.0.min.js"></script>

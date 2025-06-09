@@ -15,6 +15,7 @@ public class Category {
     private Long id;
     String name;
     String description;
+    String imageUrl;
 
     @OneToMany(mappedBy = "category")
     List<Product> products;

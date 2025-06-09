@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -22,4 +23,7 @@ public class Supplier {
 
     @ManyToMany(mappedBy = "suppliers")
     Set<Product> products;
+
+    @OneToMany(mappedBy = "supplier")
+    private List<Purchase> purchases;
 }

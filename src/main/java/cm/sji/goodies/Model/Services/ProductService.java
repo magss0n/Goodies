@@ -1,6 +1,7 @@
 package cm.sji.goodies.Model.Services;
 
 import cm.sji.goodies.Model.DTO.ProductDTO;
+import cm.sji.goodies.Model.Entities.Category;
 import cm.sji.goodies.Model.Entities.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,6 +11,8 @@ import java.util.Optional;
 
 public interface ProductService {
     ProductDTO saveProduct(ProductDTO productDTO);
+
+    List<Product> getProductsByTypeCategory(String type, Long categoryId);
 
     List<ProductDTO> getAllProducts();
 
@@ -30,4 +33,12 @@ public interface ProductService {
     List<ProductDTO> getLowStockProducts(Integer threshold);
 
     Product getProductByName(String name);
+
+    Product saveProduct(Product product);
+
+    List<Product> getProductsByCategory(String categoryName);
+
+    Product findById(long id);
+
+
 }

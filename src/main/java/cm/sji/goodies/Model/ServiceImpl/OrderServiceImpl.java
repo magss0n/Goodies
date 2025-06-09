@@ -145,6 +145,31 @@ public class OrderServiceImpl implements OrderService {
         return orderRepository.countByStatus(status);
     }
 
+    @Override
+    public Order saveOrder(Order order) {
+        return orderRepository.save(order);
+    }
+
+    @Override
+    public List<Order> getAllOrdersByClientId(Long clientId) {
+        return orderRepository.findAllByClient_Id(clientId);
+    }
+
+    @Override
+    public List<Order> getAllOrdersByStatus(String status) {
+        return orderRepository.findAllByStatus(status);
+    }
+
+    @Override
+    public List<Order> findAllOrders() {
+        return orderRepository.findAll();
+    }
+
+    @Override
+    public Order getOrderbyId(Long id) {
+        return orderRepository.findById(id).orElse(null);
+    }
+
     // Helper method for mapping between Entity and DTO
     private OrderDTO mapToDTO(Order order, List<CartProductDTO> cartProducts) {
         double totalAmount = cartProducts.stream()
